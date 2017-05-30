@@ -54,7 +54,7 @@ namespace ShoppingBasketDiscount
 
         /// <summary>
         /// Inheriting the method OfferVoucher in order to calculate the total cost of the basket
-        /// 
+        /// Offer Voucher used for Product Types
         /// 
         /// </summary>
         /// <param name="currentTotalCost"> Total cost of basket</param>
@@ -70,12 +70,12 @@ namespace ShoppingBasketDiscount
             
             this.TotalCost = currentTotalCost;
 
-            currentTotalCost -= giftVoucherValue;
+            currentTotalCost -= giftVoucherValue; //excluding the gift voucher value if it is a product
 
             //Checking against the threshold and if the gift voucher has a value
             if (currentTotalCost >= threshold)
             {
-                if (productTypeTotal != 0)
+                if (productTypeTotal != 0) // Checking against product type, if not 0 product type has been found then continue
                 {
                     remainingCost = currentTotalCost - productTypeTotal;
                     productTypeTotal -= offerValue;
@@ -88,7 +88,7 @@ namespace ShoppingBasketDiscount
                     Message.Append($"There are no products in your basket applicable to voucher {voucherNum}").AppendLine().ToString();
                 }
             }
-            else
+            else // if threshold has not been met then find the remaining cost needed to go over threshold and display message
             {
 
 
@@ -98,7 +98,7 @@ namespace ShoppingBasketDiscount
                 do
                 {
                     remainingCost2 += 0.1;
-                } while (remainingCost2 <= 50.1);
+                } while (remainingCost2 <= 50.1); // getting remaining cost
 
 
                 remainingCost2 -= currentTotalCost;
@@ -113,7 +113,14 @@ namespace ShoppingBasketDiscount
 
 
         }
-
+        /// <summary>
+        /// Offer Voucher used for all products
+        /// </summary>
+        /// <param name="currentTotalCost"></param>
+        /// <param name="threshold"></param>
+        /// <param name="voucherNum"></param>
+        /// <param name="offerValue"></param>
+        /// <param name="giftVoucherValue"></param>
         public override void OfferVoucher(double currentTotalCost, double threshold, string voucherNum, double offerValue, double giftVoucherValue)
         {
 
