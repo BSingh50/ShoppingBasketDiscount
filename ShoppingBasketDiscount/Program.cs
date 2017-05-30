@@ -7,9 +7,10 @@ using Products;
 using Vouchers;
 
 /// <summary>
-/// Please see code for each Basket Scenario below
+///
+/// Please see code for each Basket Scenario below. Run program for each basket scenario to see results.
 /// Comment out and remove comments where necessary. The first basket scenario
-/// is ready to be tested. After please comment the code and move onto the next basket scenario.
+/// is ready to be run. After please comment out the code and move onto the next basket scenario.
 /// 
 /// </summary>
 
@@ -53,7 +54,7 @@ namespace ShoppingBasketDiscount
             //var productTypeCost = basket.Where(p => p.Type.Contains("Head Gear")).Sum(p => p.Cost);
             //var productNameGiftVoucherCost = basket.Where(p => p.ProductName.Contains("Gift Voucher")).Sum(p => p.Cost);
             //basketTotal.TotalCost = basket.Sum(p => p.Cost);
-            //basketTotal.OfferVoucher(basketTotal.TotalCost, 50.00, "111444", "All", 5.00, productNameGiftVoucherCost);
+            //basketTotal.OfferVoucher(basketTotal.TotalCost, 50.00, "111444", 5.00, productNameGiftVoucherCost);
             //basketTotal.GiftVoucherBasket();
 
 
@@ -63,7 +64,7 @@ namespace ShoppingBasketDiscount
             //var productTypeCost = basket.Where(p => p.Type.Contains("Head Gear")).Sum(p => p.Cost);
             //var productNameGiftVoucherCost = basket.Where(p => p.ProductName.Contains("Gift Voucher")).Sum(p => p.Cost);
             //basketTotal.TotalCost = basket.Sum(p => p.Cost);
-            //basketTotal.OfferVoucher(basketTotal.TotalCost, 50.00, "111555", "All", 5.00, productNameGiftVoucherCost);
+            //basketTotal.OfferVoucher(basketTotal.TotalCost, 50.00, "111555", 5.00, productNameGiftVoucherCost);
 
             Console.WriteLine(basketTotal.ToString());
 

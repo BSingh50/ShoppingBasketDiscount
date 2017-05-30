@@ -7,11 +7,13 @@ using Vouchers;
 /// <summary>
 /// All 5 Baskets can be viewed below with the specified products 
 /// in each method as stated in the Task Sheet
+/// 
+/// It also implements the Gift Interface
 /// </summary>
 
 namespace Products
 {
-    public class ProductRepository
+    public class ProductRepository : Gift
     {
         private List<Product> products;
 
@@ -81,12 +83,17 @@ namespace Products
                 products = new List<Product>();
 
                 products.Add(new Product() { ProductName = "Hat", Cost = 25.00, Quantity = 1, Type = "Head Accessory" });
-                products.Add(new Product() { ProductName = "Gift Voucher", Cost = 30.00, Quantity = 1, Type = "Voucher" });
+                products.Add(new Product() { ProductName = "Gift Voucher", Cost = GiftVoucher(), Quantity = 1, Type = "Voucher" });
 
             }
 
             return products;
         }
 
+        //Gift Value of 30.00 for Gift as a Product in Basket 5
+        public double GiftVoucher()
+        {
+            return 30.00;
+        }
     }
 }
